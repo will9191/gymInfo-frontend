@@ -1,0 +1,21 @@
+.nav-wrapper{
+    .nav-container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .nav-left{
+            .nav-logo{
+                font-size: 40px;
+            }
+        }
+        .nav-right{
+            .menu{
+                display: flex;
+                list-style: none;
+                .item{
+                    margin: 15px;
+                }
+            }
+        }
+    }
+}
