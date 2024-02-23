@@ -1,0 +1,10 @@
+<ul class="flex m-4">
+  @for (exercise of data; track exercise.id) {
+  <li class="list-none border m-4">
+    <img class="w-80 h-60 border-b-2" src="{{ exercise.picture }}" />
+    <h3 class="text-emerald-800 text-center items-center justify-center">
+      {{ exercise.name }}
+    </h3>
+  </li>
+  }
+</ul>

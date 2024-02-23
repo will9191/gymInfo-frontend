@@ -15,4 +15,13 @@ export class ExerciseService {
       `${apiEndpoint.ExerciseEndpoint.getAllExercises}`
     );
   }
+
+  getExercisesBySearch(
+    name: string,
+    category: string
+  ): Observable<ExerciseResponse> {
+    return this.http.get<ExerciseResponse>(
+      `${apiEndpoint.ExerciseEndpoint.getExercisesBySearch}?name=${name}&category=${category}`
+    );
+  }
 }

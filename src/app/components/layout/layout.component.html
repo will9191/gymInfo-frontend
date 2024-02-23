@@ -1,37 +1,34 @@
-<nav class="nav-wrapper">
-  <div class="nav-container">
-    <div class="nav-left">
-      <a
-        class="nav-logo"
-        routerLink=""
+<nav class="bg-gray-50 text-emerald-800 shadow-md mb-6">
+  <div class="flex items-center justify-between p-6">
+    <a
+      class=" text-3xl font-bold hover:font-normal"
+      routerLink=""
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      >GymInfo</a
+    >
+
+    <ul class="flex  items-center space-x-6">
+      <li
+        class="item"
+        routerLink="/about"
         routerLinkActive="active"
         ariaCurrentWhenActive="page"
-        >GymInfo</a
       >
-    </div>
-    <div class="nav-right">
-      <ul class="menu">
-        <li
-          class="item"
-          routerLink="/about"
-          routerLinkActive="active"
-          ariaCurrentWhenActive="page"
-        >
-          About
-        </li>
-        <li
-          class="item"
-          routerLink="/profile"
-          routerLinkActive="active"
-          ariaCurrentWhenActive="page"
-        >
-          <mat-icon>person</mat-icon>
-        </li>
-        <li class="item">
-          <mat-icon>logout</mat-icon>
-        </li>
-      </ul>
-    </div>
+        About
+      </li>
+      <li
+        class=""
+        routerLink="/profile"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+      >
+        <mat-icon>person</mat-icon>
+      </li>
+      <li class="">
+        <mat-icon>logout</mat-icon>
+      </li>
+    </ul>
   </div>
 </nav>
 <router-outlet />

@@ -1,23 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { ExerciseService } from '../../services/exercise.service';
-import { Subject } from 'rxjs';
+import { ExerciseService } from '../../../services/exercise.service';
 
 @Component({
-  selector: 'app-exercise',
+  selector: 'app-all-exercises',
   standalone: true,
   imports: [],
   providers: [ExerciseService],
-  templateUrl: './exercise.component.html',
-  styleUrl: './exercise.component.scss',
+  templateUrl: './all-exercises.component.html',
+  styleUrl: './all-exercises.component.scss',
 })
-export class ExerciseComponent implements OnInit {
+export class AllExercisesComponent implements OnInit {
   constructor(private exerciseService: ExerciseService) {}
 
   data: any;
 
   ngOnInit(): void {
     this.getAllExercises();
-    console.log('a');
   }
 
   getAllExercises() {

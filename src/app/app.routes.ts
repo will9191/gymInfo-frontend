@@ -1,23 +1,29 @@
 import { Routes } from '@angular/router';
-import { ExerciseComponent } from './components/exercise/exercise.component';
+
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { AboutComponent } from './components/about/about.component';
+import { AllExercisesComponent } from './components/pages/all-exercises/all-exercises.component';
+import { SearchedExercisesComponent } from './components/pages/searched-exercises/searched-exercises.component';
 
 export const routes: Routes = [
   {
-    path:'',
+    path: '',
     component: LayoutComponent,
     children: [
       {
         path: '',
         title: 'Exercise',
-        component: ExerciseComponent,
+        component: AllExercisesComponent,
       },
-
+      {
+        path: 'search',
+        title: 'Search - Exercises',
+        component: SearchedExercisesComponent,
+      },
       {
         path: 'about',
         title: 'About',
