@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ExerciseService } from '../../../services/exercise.service';
 
 @Component({
@@ -10,10 +10,8 @@ import { ExerciseService } from '../../../services/exercise.service';
   styleUrl: './searched-exercises.component.scss',
 })
 export class SearchedExercisesComponent implements OnInit {
-  searchModel: any = {
-    name: '',
-    category: '',
-  };
+  @Input() name = '';
+  @Input() category = '';
 
   constructor(private exerciseService: ExerciseService) {}
 
@@ -25,16 +23,13 @@ export class SearchedExercisesComponent implements OnInit {
 
   getExercisesBySearch() {
     this.exerciseService
-      .getExercisesBySearch(this.searchModel.name, this.searchModel.category)
+      .getExercisesBySearch(this.name, this.category)
       .subscribe({
         next: (data: any) => {
           this.data = data;
           console.log(data);
           console.log(
-            this.exerciseService.getExercisesBySearch(
-              this.searchModel.name,
-              this.searchModel.category
-            )
+            this.exerciseService.getExercisesBySearch(this.name, this.category)
           );
         },
       });

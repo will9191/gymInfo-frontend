@@ -23,6 +23,7 @@ export const routes: Routes = [
         path: 'search',
         title: 'Search - Exercises',
         component: SearchedExercisesComponent,
+        pathMatch: 'full',
       },
       {
         path: 'about',
