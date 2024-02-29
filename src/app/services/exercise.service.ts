@@ -18,10 +18,18 @@ export class ExerciseService {
 
   getExercisesBySearch(
     name: string,
-    category: string
+    category?: string
   ): Observable<ExerciseResponse> {
+    console.log();
     return this.http.get<ExerciseResponse>(
       `${apiEndpoint.ExerciseEndpoint.getExercisesBySearch}?name=${name}&category=${category}`
+    );
+  }
+
+  getExerciseById(id: number): Observable<ExerciseResponse> {
+    console.log();
+    return this.http.get<ExerciseResponse>(
+      `${apiEndpoint.ExerciseEndpoint.getExerciseById}/${id}`
     );
   }
 }

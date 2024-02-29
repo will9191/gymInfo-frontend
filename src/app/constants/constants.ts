@@ -5,5 +5,6 @@ export const apiEndpoint = {
   ExerciseEndpoint: {
     getAllExercises: `${API_URL}/api/v1/exercise`,
     getExercisesBySearch: `${API_URL}/api/v1/exercise/search`,
+    getExerciseById: `${API_URL}/api/v1/exercise`
   },
 };

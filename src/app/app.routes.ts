@@ -7,7 +7,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { LayoutComponent } from './components/layout/layout.component';
 import { AboutComponent } from './components/about/about.component';
 import { AllExercisesComponent } from './components/pages/all-exercises/all-exercises.component';
-import { SearchedExercisesComponent } from './components/pages/searched-exercises/searched-exercises.component';
+import { ExerciseComponent } from './components/pages/exercise/exercise.component';
 
 export const routes: Routes = [
   {
@@ -20,10 +20,9 @@ export const routes: Routes = [
         component: AllExercisesComponent,
       },
       {
-        path: 'search',
-        title: 'Search - Exercises',
-        component: SearchedExercisesComponent,
-        pathMatch: 'full',
+        path: ':id',
+        title: 'Exercise',
+        component: ExerciseComponent,
       },
       {
         path: 'about',

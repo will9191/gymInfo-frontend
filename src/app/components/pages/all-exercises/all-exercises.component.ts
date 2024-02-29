@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ExerciseService } from '../../../services/exercise.service';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { NgArrayPipesModule } from 'ngx-pipes';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-all-exercises',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, FormsModule, NgArrayPipesModule, RouterModule],
   providers: [ExerciseService],
   templateUrl: './all-exercises.component.html',
   styleUrl: './all-exercises.component.scss',
@@ -12,7 +16,13 @@ import { ExerciseService } from '../../../services/exercise.service';
 export class AllExercisesComponent implements OnInit {
   constructor(private exerciseService: ExerciseService) {}
 
+  categoryTerm: string = '';
+
   data: any;
+
+  setCategory(category: string = "") {
+    this.categoryTerm = category;
+  }
 
   ngOnInit(): void {
     this.getAllExercises();
