@@ -20,9 +20,10 @@ export const routes: Routes = [
         component: AllExercisesComponent,
       },
       {
-        path: ':id',
+        path: 'exercise/:id',
         title: 'Exercise',
         component: ExerciseComponent,
+        pathMatch: 'full',
       },
       {
         path: 'about',

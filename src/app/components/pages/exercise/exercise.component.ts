@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnDestroy, OnInit } from '@angular/core';
 import { ExerciseService } from '../../../services/exercise.service';
 
 @Component({
@@ -8,10 +8,10 @@ import { ExerciseService } from '../../../services/exercise.service';
   templateUrl: './exercise.component.html',
   styleUrl: './exercise.component.scss',
 })
-export class ExerciseComponent implements OnInit {
+export class ExerciseComponent implements OnInit, OnDestroy {
   constructor(private exerciseService: ExerciseService) {}
-
-  @Input() id = 0;
+  @Input() 
+  id?: number = 0;
 
   exercise: any;
 
@@ -19,8 +19,12 @@ export class ExerciseComponent implements OnInit {
     this.getExerciseById();
   }
 
+  ngOnDestroy(): void {
+    
+  }
+
   getExerciseById() {
-    this.exerciseService.getExerciseById(this.id).subscribe({
+    this.exerciseService.getExerciseById(this.id!).subscribe({
       next: (data: any) => {
         this.exercise = data;
         console.log(data);

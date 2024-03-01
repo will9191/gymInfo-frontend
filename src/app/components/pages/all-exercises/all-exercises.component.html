@@ -1,14 +1,19 @@
+<h1 class="text-center">Exercises</h1>
+
 <input ngDefaultControl [(ngModel)]="categoryTerm" />
 <ul>
   <button (click)="setCategory()">Chest</button>
 </ul>
 
-<ul class="flex m-4">
+<ul class="m-4 grid grid-cols-3">
   <li
     *ngFor="let exercise of data | filterBy : ['category'] : this.categoryTerm"
     class="list-none border m-4"
-    routerLink="{{ exercise.id }}"
   >
-    <img class="w-80 h-60 border-b-2" src="{{ exercise.picture }}" />
+    <img
+      class="w-80 h-60 border-b-2"
+      routerLink="exercise/{{ exercise.id }}"
+      src="{{ exercise.picture }}"
+    />
   </li>
 </ul>

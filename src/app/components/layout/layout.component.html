@@ -1,34 +1,30 @@
-<nav class="bg-gray-50 text-primary shadow-md mb-6">
-  <div class="flex items-center justify-between p-6">
-    <a
-      class=" text-3xl font-bold"
-      routerLink=""
-      routerLinkActive="active"
-      ariaCurrentWhenActive="page"
-      >GymInfo</a
-    >
-
-    <ul class="flex  items-center space-x-6">
-      <li
-        class="item"
-        routerLink="/about"
-        routerLinkActive="active"
-        ariaCurrentWhenActive="page"
-      >
-        About
-      </li>
-      <li
-        class=""
-        routerLink="/profile"
-        routerLinkActive="active"
-        ariaCurrentWhenActive="page"
-      >
-        <mat-icon>person</mat-icon>
-      </li>
-      <li class="">
-        <mat-icon>logout</mat-icon>
-      </li>
-    </ul>
+<div class="flex h-full">
+  <aside
+    class="bg-white fixed text-white w-40 text-xl shadow-md items-center h-full px-6 py-10"
+  >
+    <div class="items-center justify-">
+      <ul>
+        <img
+          src="../../../assets/logo.png"
+          routerLink=""
+          class="w-28 h-20 bg-primary rounded-2xl mb-3"
+        />
+      </ul>
+      <ul class="items-center h-full flex flex-col bg-primary rounded-2xl">
+        @for (item of list; track $index) {
+        <li
+          class="my-2"
+          routerLink="{{ item.link }}"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+        >
+          <mat-icon>{{ item.icon }}</mat-icon>
+        </li>
+        }
+      </ul>
+    </div>
+  </aside>
+  <div class="mx-40">
+    <router-outlet />
   </div>
-</nav>
-<router-outlet />
+</div>

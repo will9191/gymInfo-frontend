@@ -6,6 +6,9 @@ module.exports = {
       colors: {
         primary: "#F8931F",
       },
+      fontFamily: {
+        body: ["Comfortaa"],
+      },
     },
   },
   plugins: [],

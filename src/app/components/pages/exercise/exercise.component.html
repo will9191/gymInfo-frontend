@@ -1,4 +1,9 @@
-{{ exercise.id }} <img src="{{ exercise.picture }}" />
-<h3 class="text-primary text-center items-center justify-center">
-  {{ exercise.name }}
+<img src="{{ exercise.picture }}" class="w-96 h-96" />
+{{ exercise.name }}
+<h3 class="text-gray-700 text-center items-center justify-center">
+  {{ exercise.category }}
+  {{ exercise.primaryMuscle }}
+  {{ exercise.secondaryMuscles }}
+  {{ exercise.description }}
+  {{ exercise.equipment }}
 </h3>
