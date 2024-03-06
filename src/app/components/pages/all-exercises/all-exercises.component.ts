@@ -20,10 +20,6 @@ export class AllExercisesComponent implements OnInit {
 
   data: any;
 
-  setCategory(category: string = "") {
-    this.categoryTerm = category;
-  }
-
   ngOnInit(): void {
     this.getAllExercises();
   }

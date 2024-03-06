@@ -1,6 +1,38 @@
 <div class="flex h-full">
   <aside
-    class="bg-white fixed text-white w-40 text-xl shadow-md items-center h-full px-6 py-10"
+    class="bg-white h-full absolute text-white w-32 text-xl items-center px-6 py-10"
+  >
+    <div class="items-center justify-center h-full">
+      <ul class="items-center flex flex-col mb-3 bg-primary rounded-2xl">
+        <li class="my-5">
+          <mat-icon class="scale-150" [inline]="true">list</mat-icon>
+        </li>
+      </ul>
+
+      <ul
+        class="items-center h-5/6 flex flex-col relative bg-primary rounded-2xl"
+      >
+        @for (item of list; track $index) {
+        <li
+          class="my-5"
+          routerLink="{{ item.link }}"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+        >
+          <mat-icon class="scale-150" [inline]="true">{{ item.icon }}</mat-icon>
+        </li>
+        }
+        <li class="my-5 absolute bottom-0">
+          <mat-icon class="scale-150" [inline]="true">settings</mat-icon>
+        </li>
+      </ul>
+    </div>
+  </aside>
+  <div class="mx-40 w-full">
+    <router-outlet />
+  </div>
+  <aside
+    class="bg-white fixed right-0 text-white w-40 text-xl shadow-md items-center h-full px-6 py-10"
   >
     <div class="items-center justify-">
       <ul>
@@ -24,7 +56,4 @@
       </ul>
     </div>
   </aside>
-  <div class="mx-40">
-    <router-outlet />
-  </div>
 </div>

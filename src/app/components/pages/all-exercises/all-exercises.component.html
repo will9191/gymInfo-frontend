@@ -1,17 +1,85 @@
-<h1 class="text-center">Exercises</h1>
+<h1 class="text-center font-bold text-4xl my-6 text-secondary">Exercises</h1>
 
-<input ngDefaultControl [(ngModel)]="categoryTerm" />
-<ul>
-  <button (click)="setCategory()">Chest</button>
+<ul class="space-x-4 text-center">
+  <button
+    [ngClass]="{
+      'bg-primary text-white text-2xl px-10 active:hover:bg-black rounded-2xl':
+        categoryTerm == '',
+      'bg-white': categoryTerm != ''
+    }"
+    (click)="categoryTerm = ''"
+  >
+    All
+  </button>
+  <button
+    (click)="categoryTerm = 'Chest'"
+    [ngClass]="{
+      'bg-primary text-white text-2xl px-10 active:hover:bg-black rounded-2xl':
+        categoryTerm == 'Chest',
+      'bg-white': categoryTerm != 'Chest'
+    }"
+  >
+    Chest
+  </button>
+  <button
+    (click)="categoryTerm = 'Back'"
+    [ngClass]="{
+      'bg-primary text-white text-2xl px-10 active:hover:bg-black rounded-2xl':
+        categoryTerm == 'Back',
+      'bg-white': categoryTerm != 'Back'
+    }"
+  >
+    Back
+  </button>
+  <button
+    (click)="categoryTerm = 'Arms'"
+    [ngClass]="{
+      'bg-primary text-white text-2xl px-10 active:hover:bg-black rounded-2xl':
+        categoryTerm == 'Arms',
+      'bg-white': categoryTerm != 'Arms'
+    }"
+  >
+    Arms
+  </button>
+  <button
+    (click)="categoryTerm = 'Shoulders'"
+    [ngClass]="{
+      'bg-primary text-white text-2xl px-10 active:hover:bg-black rounded-2xl':
+        categoryTerm == 'Shoulders',
+      'bg-white': categoryTerm != 'Shoulders'
+    }"
+  >
+    Shoulders
+  </button>
+  <button
+    (click)="categoryTerm = 'Legs'"
+    [ngClass]="{
+      'bg-primary text-white text-2xl px-10 active:hover:bg-black rounded-2xl':
+        categoryTerm == 'Legs',
+      'bg-white': categoryTerm != 'Legs'
+    }"
+  >
+    Legs
+  </button>
+  <button
+    (click)="categoryTerm = 'Abs'"
+    [ngClass]="{
+      'bg-primary text-white text-2xl px-10 active:hover:bg-black rounded-2xl':
+        categoryTerm == 'Abs',
+      'bg-white': categoryTerm != 'Abs'
+    }"
+  >
+    Abs
+  </button>
 </ul>
 
-<ul class="m-4 grid grid-cols-3">
+<ul class="m-4 grid grid-cols-4">
   <li
     *ngFor="let exercise of data | filterBy : ['category'] : this.categoryTerm"
-    class="list-none border m-4"
+    class="flex list-none m-4"
   >
     <img
-      class="w-80 h-60 border-b-2"
+      class="w-80 h-60 border shadow-xl border-b-primary border-b-4 rounded-tl-3xl"
       routerLink="exercise/{{ exercise.id }}"
       src="{{ exercise.picture }}"
     />

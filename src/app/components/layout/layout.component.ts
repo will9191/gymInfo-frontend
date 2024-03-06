@@ -24,6 +24,7 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class LayoutComponent {
   list = [
+    { link: '', icon: 'home' },
     { link: '/profile', icon: 'person' },
     { link: '/about', icon: 'info' },
     { link: '', icon: 'logout' },
